@@ -54,7 +54,7 @@ $sortingTable = [
             target="_blank">AirBnb</a>
         <a
             style="padding: 10px; border: 1px solid black"
-            href="https://www.google.co.uk/maps/place/Southampton"
+            href="https://www.google.co.uk/maps/place/<?=$location?>"
             target="_blank">Maps</a>
         <a
             style="padding: 10px; border: 1px solid black"
