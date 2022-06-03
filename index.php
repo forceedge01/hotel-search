@@ -7,10 +7,11 @@ $children=$_GET['children'] ?? 3;
 $kid1=$_GET['kid1'] ?? 7;
 $kid2=$_GET['kid2'] ?? 5;
 $kid3=$_GET['kid3'] ?? 4;
-$checkin=isset($_GET['checkin']) ? date_create($_GET['checkin']) : date_create(date());
+$checkin=isset($_GET['checkin']) ? date_create($_GET['checkin']) : (date_create(date('Y-m-d'))->modify('+1 day'));
 $nights=$_GET['nights'] ?? 2;
 $checkout=(new DateTime($checkin->format('Y-m-d')))->modify("+{$nights} days");
 
+$baseLocation=$_GET['baseLocation'] ?? 'Birmingham';
 $location=$_GET['location'] ?? 'England';
 $rooms=1;
 $roomsIfnot=2;
@@ -36,6 +37,7 @@ $sortingTable = [
         Kid1 <input type="int" name="kid1" value=<?=$kid1?> />
         Kid2 <input type="int" name="kid2" value=<?=$kid2?> />
         Kid3 <input type="int" name="kid3" value=<?=$kid3?> />
+        Base location <input type="text" name="baseLocation" value="<?=$baseLocation?>" />
         Checkout date: <?=$checkout->format('Y-m-d')?>
         <button type="submit" name="search">Search</button>
     </form>
@@ -55,12 +57,16 @@ $sortingTable = [
         target="_blank">AirBnb</a>
     <a
         style="padding: 10px; border: 1px solid black"
-        href="https://www.google.co.uk/maps/place/<?=$location?>"
+        href="https://www.google.co.uk/maps/dir/<?=$baseLocation?>/<?=$location?>"
         target="_blank">Maps</a>
     <a
         style="padding: 10px; border: 1px solid black"
         href="https://www.tripadvisor.co.uk/Search?q=<?=$location?>&searchNearby=true&blockRedirect=true"
         target="_blank">Things todo</a>
+    <a
+        style="padding: 10px; border: 1px solid black"
+        href="https://www.youtube.com/results?search_query=<?=$location?>"
+        target="_blank">Videos</a>
     </div>
     <div style="height: 150px; width: 69%; display: block; float: left;">
         <iframe src="https://www.metoffice.gov.uk/search?query=<?=$location?>#?date=<?=$checkin->format('Y-m-d')?>" width="100%" height="100%"></iframe>
