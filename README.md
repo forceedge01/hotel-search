@@ -1,1 +1,3 @@
 I've started this project to search quickly on multiple websites using predefined criteria of more than the standard family of 4 configuation found everywhere. The struggle was a bit too much to bear, spending countless hour searching and filling forms, multiple ages for each child only to be told no room was available. This script injects the pre defined configruation into multiple hotel sites and gives you a quick results along with videos and maps links.
+
+Caveat: This project is meant to be functional rather than pretty.

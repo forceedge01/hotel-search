@@ -26,6 +26,16 @@ $sortingTable = [
 
 <html>
 <title><?=$location?> - <?=$checkin->format('Y-m-d')?> (<?=$nights?> nights)</title>
+<head>
+    <style>
+        .external-link {
+            padding: 10px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
 <body>
     <form>
         Checkin Date <input type="date" name="checkin" value="<?=$checkin->format('Y-m-d')?>" />
@@ -43,30 +53,30 @@ $sortingTable = [
     </form>
     
     <div style="height: 150px; width: 30%; display: block; float: left;">
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.kayak.co.uk/hotels/<?=$location?>/<?=$checkin->format('Y-m-d')?>/<?=$checkout->format('Y-m-d')?>/<?=$adults?>adults/<?=$children?>children-<?=$kid1?>-<?=$kid2?>-<?=$kid3?>/<?=$rooms?>rooms?sort=price_a"
-        target="_blank">View on Kayak</a>
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.travelodge.co.uk/search/results?location=<?=$location?>&action=search&source=l&checkIn=<?=$checkin->format('d/m/y')?>&checkOut=<?=$checkout->format('d/m/y')?>&rooms[0][adults]=1&rooms[0][children]=2&rooms[1][adults]=1&rooms[1][children]=1&sb=1"
-        target="_blank">View on Travelodge</a>
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.airbnb.co.uk/s/<?=$location?>/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&date_picker_type=calendar&checkin=<?=$checkin->format('Y-m-d')?>&checkout=<?=$checkout->format('Y-m-d')?>&adults=<?=$adults?>&children=<?=$children?>&source=structured_search_input_header&search_type=filter_change"
-        target="_blank">AirBnb</a>
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.google.co.uk/maps/dir/<?=$baseLocation?>/<?=$location?>"
-        target="_blank">Maps</a>
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.tripadvisor.co.uk/Search?q=<?=$location?>&searchNearby=true&blockRedirect=true"
-        target="_blank">Things todo</a>
-    <a
-        style="padding: 10px; border: 1px solid black"
-        href="https://www.youtube.com/results?search_query=<?=$location?>"
-        target="_blank">Videos</a>
+        <a
+            class ="external-link"
+            href="https://www.kayak.co.uk/hotels/<?=$location?>/<?=$checkin->format('Y-m-d')?>/<?=$checkout->format('Y-m-d')?>/<?=$adults?>adults/<?=$children?>children-<?=$kid1?>-<?=$kid2?>-<?=$kid3?>/<?=$rooms?>rooms?sort=price_a"
+            target="_blank">View on Kayak</a>
+        <a
+            class ="external-link"
+            href="https://www.travelodge.co.uk/search/results?location=<?=$location?>&action=search&source=l&checkIn=<?=$checkin->format('d/m/y')?>&checkOut=<?=$checkout->format('d/m/y')?>&rooms[0][adults]=1&rooms[0][children]=2&rooms[1][adults]=1&rooms[1][children]=1&sb=1"
+            target="_blank">View on Travelodge</a>
+        <a
+            class ="external-link"
+            href="https://www.airbnb.co.uk/s/<?=$location?>/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&date_picker_type=calendar&checkin=<?=$checkin->format('Y-m-d')?>&checkout=<?=$checkout->format('Y-m-d')?>&adults=<?=$adults?>&children=<?=$children?>&source=structured_search_input_header&search_type=filter_change"
+            target="_blank">AirBnb</a>
+        <a
+            class ="external-link"
+            href="https://www.google.co.uk/maps/dir/<?=$baseLocation?>/<?=$location?>"
+            target="_blank">Maps</a>
+        <a
+            class ="external-link"
+            href="https://www.tripadvisor.co.uk/Search?q=<?=$location?>&searchNearby=true&blockRedirect=true"
+            target="_blank">Things todo</a>
+        <a
+            class ="external-link"
+            href="https://www.youtube.com/results?search_query=<?=$location?>"
+            target="_blank">Videos</a>
     </div>
     <div style="height: 150px; width: 69%; display: block; float: left;">
         <iframe src="https://www.metoffice.gov.uk/search?query=<?=$location?>#?date=<?=$checkin->format('Y-m-d')?>" width="100%" height="100%"></iframe>
